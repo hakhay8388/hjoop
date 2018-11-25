@@ -110,6 +110,24 @@ Javascript Object-Oriented Programming
 		TestContainer.TestExtendClass1 = new cTestExtendClass1("aaaa", "bbbb");
 		TestContainer.TestExtendClass2 = new cTestExtendClass2("aaaa", "bbbb");
     
+    		if (WebGraph.ControlBaseClass(TestContainer.TestExtendClass2, ObjectTypes.cTestBaseClass))
+		{
+			alert("TestExtendClass2 -> extended from cTestBaseClass");
+		}
+		else
+		{
+			alert("TestExtendClass2 -> not extended from cTestBaseClass");
+		}
+		
+		if (WebGraph.ControlBaseClass(TestContainer.TestExtendClass2, ObjectTypes.cTestExtendClass1))
+		{
+			alert("TestExtendClass2 -> extended from cTestExtendClass1");
+		}
+		else
+		{
+			alert("TestExtendClass2 -> not extended from cTestExtendClass1");
+		}
+    
     
     		TestContainer.TestBaseClass.SomeFunction1('test');
     		TestContainer.TestExtendClass1.SomeFunction1('test');
