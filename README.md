@@ -1,7 +1,7 @@
 # hjoop
 Javascript Object-Oriented Programming
 
-				ObjectTypes.ITestInterface1 = new cObjType("ITestInterface1");
+		ObjectTypes.ITestInterface1 = new cObjType("ITestInterface1");
 		ObjectTypes.ITestInterface2 = new cObjType("ITestInterface2");
 	
 		ObjectTypes.cTestBaseClass = new cObjType("cTestBaseClass");
