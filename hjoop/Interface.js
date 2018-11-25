@@ -1,0 +1,3 @@
+﻿var Interface = Class(Object,
+{
+}, {});
