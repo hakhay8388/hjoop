@@ -5,16 +5,12 @@ Javascript Object-Oriented Programming
 		ObjectTypes.cTestExtendClass1 = new cObjType("cTestExtendClass1");
 		ObjectTypes.cTestExtendClass2 = new cObjType("cTestExtendClass2"); // Contained cTestExtendClass1
 
-//####################################################################################################
-//##################################   cTestBaseClass       ##########################################
-//####################################################################################################
 		cTestBaseClass = Class(cBaseObject,
 		{
 			ObjectType: ObjectTypes.cTestBaseClass
 			, ClassPublicVariableSample1: null
 			, ClassPublicVariableSample2: null
 			, ClassPublicVariableSample3: null
-			//############################# This block must be defined ########################################################
 			, constructor: function(_ConstructorParam1, _ConstructorParam2)
 			{
 				//Call base class Initialize
@@ -38,9 +34,7 @@ Javascript Object-Oriented Programming
 			{
 				return cBaseObject.prototype;
 			}
-			//###################################################################################################################
 			,
-			//############### Your Functions ###################################
 			SomeFunction1: function(_Param1)
 			{				
 				alert(this.ClassPublicVariableSample1 + " - " + _Param1);
@@ -50,25 +44,12 @@ Javascript Object-Oriented Programming
 			{	
 				alert(this.ClassPublicVariableSample1 + " - " + _Param1);
 			}
-			//############### Your Functions End###################################
 			
 		}, {});
-//####################################################################################################
-//####################################################################################################
-//####################################################################################################
-
-
-	
-		
-		
-//####################################################################################################
-//##################################   cTestExtendClass1    ##########################################
-//####################################################################################################
 		
 		cTestExtendClass1 = Class(cTestBaseClass,
 		{
 			ObjectType: ObjectTypes.cTestExtendClass1
-			//############################# This block must be defined ########################################################
 			, constructor: function(_ConstructorParam1, _ConstructorParam2)
 			{
 				//Call base class Initialize ; send initialize value to base class
@@ -85,34 +66,20 @@ Javascript Object-Oriented Programming
 			{
 				return cTestBaseClass.prototype;
 			}
-			//###################################################################################################################
-			,
-			//############### Your Functions ###################################
+ 			,
 			SomeFunction1: function(_Param1)
 			{		
 				cTestBaseClass.prototype.SomeFunction1.call(this, _Param1);        			
 				alert(this.ClassPublicVariableSample2 + " - " + _Param1);
 			}
-			//############### Your Functions End###################################
 			
 		}, {});
-//####################################################################################################
-//####################################################################################################
-//####################################################################################################		
-		
-		
-		
-
-//####################################################################################################
-//##################################   cTestExtendClass2    ##########################################
-//####################################################################################################
 
 		
 		cTestExtendClass2 = Class(cTestBaseClass,
 		{
 			ObjectType: ObjectTypes.cTestExtendClass2
 			, InnerItem : null
-			//############################# This block must be defined ########################################################
 			, constructor: function(_ConstructorParam1, _ConstructorParam2)
 			{
 				//Call base class Initialize ; send initialize value to base class
@@ -131,14 +98,8 @@ Javascript Object-Oriented Programming
 			{
 				return cTestBaseClass.prototype;
 			}
-			//###################################################################################################################
-			
+						
 		}, {});
-		
-
-//####################################################################################################
-//####################################################################################################
-//####################################################################################################		
 
 		
 		TestContainer = function()
@@ -150,9 +111,9 @@ Javascript Object-Oriented Programming
 		TestContainer.TestExtendClass2 = new cTestExtendClass2("aaaa", "bbbb");
     
     
-    TestContainer.TestBaseClass.SomeFunction1('test');
-    TestContainer.TestExtendClass1.SomeFunction1('test');
-	  TestContainer.TestExtendClass2.SomeFunction1('test');
-	  TestContainer.TestExtendClass2.InnerItem.SomeFunction1('test');
+    		TestContainer.TestBaseClass.SomeFunction1('test');
+    		TestContainer.TestExtendClass1.SomeFunction1('test');
+	  	TestContainer.TestExtendClass2.SomeFunction1('test');
+		TestContainer.TestExtendClass2.InnerItem.SomeFunction1('test');
     
     
