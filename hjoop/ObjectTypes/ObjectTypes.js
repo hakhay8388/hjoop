@@ -18,6 +18,25 @@ ObjectTypes = function()
 ObjectTypes.TypeList = new cListForBase();
 
 
+ObjectTypes.Get = function (_Name)
+{
+  for (var i = 0; i < ObjectTypes.TypeList.Count(); i++)
+  {
+    if (ObjectTypes.TypeList.GetItem(i).ObjectName === _Name)
+    {
+      return ObjectTypes.TypeList.GetItem(i);
+    }
+  }
+
+  var __EvalString = "ObjectTypes." + _Name + " = new cObjType(\"" + _Name + "\");";
+  eval(__EvalString);
+  var __Result = null;
+  __EvalString = "__Result = ObjectTypes." + _Name;
+  eval(__EvalString);
+  return __Result;
+}
+
+
 
 //********************* Javascript Value Types **************
 ObjectTypes.Javascript_Number = new cObjType("number");
